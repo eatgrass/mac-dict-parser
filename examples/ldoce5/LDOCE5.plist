@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.dictionary.MySample</string>
+	<key>CFBundleName</key>
+	<string>LDOCE5</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>DCSDictionaryCopyright</key>
+	<string>Longman</string>
+	<key>DCSDictionaryManufacturerName</key>
+	<string>Apple Inc.</string>
+	<key>DCSDictionaryFrontMatterReferenceID</key>
+	<string>front_back_matter</string>
+</dict>
+</plist>

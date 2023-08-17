@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:dictionary xmlns="http://www.w3.org/1999/xhtml" xmlns:d="http://www.apple.com/DTDs/DictionaryService-1.0.rng">
+<d:entry id="LDOCE5" d:title="Longman Dictionary of Contemporary English">
+	<d:index d:value="LDOCE5"/>
+	<h1>Longman Dictionary of Contemporary English</h1>
+</d:entry>
+{% for key, v in entries.items() %}
+<d:entry id="{{key|e}}" d:title="{{key|e}}">
+{% for idx in v.indices %}
+<d:index d:value="{{idx|e}}"/>
+{% endfor %}
+{% for  d in v.definitions %}
+<h1>{{key|e}}{% if v.definitions|length > 1 %}<span class="num">{{loop.index0 + 1}}</span>{% endif %}</h1>
+{% if d.pron is not none %}
+<span class="syntax">
+    <span>| {{d.pron |e}} |</span>
+</span>
+{% endif %}
+<div class="freq">
+{% for freq in d.freq %}
+<span>{{freq |safe}}</span>
+{% endfor %}
+{% if d.level is not none %}
+<span class="level">{{d.level}}</span>
+{% endif %}
+</div>
+<div class="inflections">
+{% for inf in d.inflections %}
+<span>{{inf |e}}</span>
+{% endfor %}
+</div>
+<div>
+<ol>
+{% for sense in d.sense if not sense.bussiness%}
+	<li>
+        {% if sense.en_sign is not none or sense.cn_sign is not none %}
+		<span class="sign">
+            {% if sense.en_sign is not none %}<span class="text-en">{{sense.en_sign |e}}</span>{% endif %}
+            {% if sense.cn_sign is not none %}<span class="text-en">{{sense.cn_sign |e}}</span>{% endif %}
+        </span>
+        {% endif %}
+        {% if sense.gram is not none %}<span class="gram">{{sense.gram |e}}</span>{% endif %}
+        <span class="def">
+            {% if sense.en_def is not none %}<span class="text-en">{{sense.en_def |e}}</span>{% endif %}
+            {% if sense.cn_def is not none %}<span class="text-cn">{{sense.cn_def |e}}</span>{% endif %}
+        </span>
+        {% for example in sense.examples %}
+        <div class="examples" d:parental-control="1" d:priority="2">
+            <div class="example-item">
+                {% if example.en_exm is not none %}<span class="text-en">{{example.en_exm |e}}</span>{% endif %}
+                {% if example.cn_exm is not none %}<span class="text-cn">{{example.cn_exm |e}}</span>{% endif %}
+            </div>
+        </div>
+        {% endfor %}
+        {% for ge in sense.gram_examples %}
+        <div class="g-examples" d:parental-control="1" d:priority="2">
+            <div class="g-example-item">
+                {% if ge.form is not none %}<span class="ge-form">{{ge.form |e}}</span>{% endif %}
+                {% if ge.en_gram_exm is not none %}<span class="text-en">{{ge.en_gram_exm |e}}</span>{% endif %}
+                {% if ge.cn_gram_exm is not none %}<span class="text-cn">{{ge.cn_gram_exm |e}}</span>{% endif %}
+            </div>
+        </div>
+        {% endfor %}
+	</li>
+    {% endfor %}
+</ol>
+</div>
+{% endfor %}
+</d:entry>
+{% endfor %}
+<d:entry id="front_back_matter" d:title="LDOCE5">
+	<h1><b>Longman Dictionary of Contemporary English</b></h1>
+</d:entry>
+</d:dictionary>

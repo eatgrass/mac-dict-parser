@@ -1,0 +1,81 @@
+* {
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 18px;
+  display: inline;
+}
+
+.num {
+  vertical-align: super;
+  font-size: 0.6em;
+}
+
+.syntax {
+  color: #3b3b3b;
+  margin-left: 8px;
+}
+
+.freq {
+  margin-top: 12px;
+}
+
+.freq span {
+  border: 1px solid #000;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+
+.freq .level {
+  letter-spacing: 1px;
+  border: none;
+}
+
+.inflections {
+  margin-top: 6px;
+}
+
+.sign {
+  border: 1px solid #c7c7c7;
+  background-color: #c7c7c7;
+  padding-left: 2px;
+  padding-right: 2px;
+  border-radius: 2px;
+  margin-right: 4px;
+  font-weight: bold;
+}
+
+.gram {
+  font-weight: bold;
+  color: #31953d;
+}
+
+.examples {
+  color: #605e5c;
+  padding: 1px;
+}
+.examples-item {
+  display: inline;
+}
+
+.ge-form {
+  color: #000;
+  font-weight: bold;
+  display: block;
+}
+.example-item::before {
+  content: ' ';
+}
+
+.g-example-item .text-en {
+  color: #605e5c;
+  padding: 1px;
+}
+
+.g-example-item .text-cn {
+  color: #605e5c;
+  padding: 1px;
+}
