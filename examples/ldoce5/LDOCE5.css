@@ -1,4 +1,4 @@
-* {
+html {
   font-size: 12px;
 }
 
@@ -17,11 +17,16 @@ h1 {
   margin-left: 8px;
 }
 
+.pos {
+  padding-left: 6px;
+  font-weight: medium;
+}
+
 .freq {
   margin-top: 12px;
 }
 
-.freq span {
+.freq .fr {
   border: 1px solid #000;
   padding-left: 6px;
   padding-right: 6px;

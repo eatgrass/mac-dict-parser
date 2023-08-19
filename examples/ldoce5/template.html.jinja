@@ -16,9 +16,14 @@
     <span>| {{d.pron |e}} |</span>
 </span>
 {% endif %}
+{% if d.pos is not none %}
+<span class="pos">
+    <span>{{d.pos |e}}</span>
+</span>
+{% endif %}
 <div class="freq">
 {% for freq in d.freq %}
-<span>{{freq |safe}}</span>
+<span class="fr">{{freq |safe}}</span>
 {% endfor %}
 {% if d.level is not none %}
 <span class="level">{{d.level}}</span>
