@@ -16,9 +16,14 @@
     <span>| {{d.pron |e}} |</span>
 </span>
 {% endif %}
+{% if d.a_pron is not none %}
+<span class="syntax">
+    <span>| {{d.a_pron |e}} |</span>
+</span>
+{% endif %}
 {% if d.pos is not none %}
 <span class="pos">
-    <span>{{d.pos |e}}</span>
+    <span class="p">{{d.pos |e}}</span>{% if d.gram is not none %}<span class="gram">{{d.gram |e}}</span>{% endif %}
 </span>
 {% endif %}
 <div class="freq">
@@ -37,6 +42,7 @@
 <div>
 <ol>
 {% for sense in d.sense if not sense.bussiness%}
+    {% if sense.en_def is not none %}
 	<li>
         {% if sense.en_sign is not none or sense.cn_sign is not none %}
 		<span class="sign">
@@ -46,28 +52,29 @@
         {% endif %}
         {% if sense.gram is not none %}<span class="gram">{{sense.gram |e}}</span>{% endif %}
         <span class="def">
-            {% if sense.en_def is not none %}<span class="text-en">{{sense.en_def |e}}</span>{% endif %}
+            <span class="text-en">{{sense.en_def |e}}</span>
             {% if sense.cn_def is not none %}<span class="text-cn">{{sense.cn_def |e}}</span>{% endif %}
         </span>
-        {% for example in sense.examples %}
         <div class="examples" d:parental-control="1" d:priority="2">
+            {% for example in sense.examples %}
             <div class="example-item">
                 {% if example.en_exm is not none %}<span class="text-en">{{example.en_exm |e}}</span>{% endif %}
                 {% if example.cn_exm is not none %}<span class="text-cn">{{example.cn_exm |e}}</span>{% endif %}
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-        {% for ge in sense.gram_examples %}
         <div class="g-examples" d:parental-control="1" d:priority="2">
+            {% for ge in sense.gram_examples %}
             <div class="g-example-item">
                 {% if ge.form is not none %}<span class="ge-form">{{ge.form |e}}</span>{% endif %}
                 {% if ge.en_gram_exm is not none %}<span class="text-en">{{ge.en_gram_exm |e}}</span>{% endif %}
                 {% if ge.cn_gram_exm is not none %}<span class="text-cn">{{ge.cn_gram_exm |e}}</span>{% endif %}
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
 	</li>
-    {% endfor %}
+    {% endif %}
+{% endfor %}
 </ol>
 </div>
 {% endfor %}

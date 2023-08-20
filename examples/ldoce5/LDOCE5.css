@@ -17,9 +17,15 @@ h1 {
   margin-left: 8px;
 }
 
-.pos {
+.pos .p {
   padding-left: 6px;
-  font-weight: medium;
+  font-weight: bold;
+}
+
+.pos .gram {
+  padding-left: 6px;
+  font-weight: bold;
+  color: #31953d;
 }
 
 .freq {
@@ -60,10 +66,14 @@ h1 {
 
 .examples {
   color: #605e5c;
-  padding: 1px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-style: italic;
 }
-.examples-item {
-  display: inline;
+
+.example-item {
+  margin-top:6px;
+  margin-bottom:6px;
 }
 
 .ge-form {
@@ -71,13 +81,16 @@ h1 {
   font-weight: bold;
   display: block;
 }
-.example-item::before {
-  content: ' ';
+.g-examples {
+  padding-top: 6px;
+  padding-bottom: 10px;
 }
 
 .g-example-item .text-en {
   color: #605e5c;
-  padding: 1px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-style: italic;
 }
 
 .g-example-item .text-cn {
