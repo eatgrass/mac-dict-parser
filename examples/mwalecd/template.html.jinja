@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:dictionary xmlns="http://www.w3.org/1999/xhtml" xmlns:d="http://www.apple.com/DTDs/DictionaryService-1.0.rng">
+<d:entry id="Merriam-Webster's Advanced Learner's En-Ch Dictionary" d:title="韦氏高阶英汉双解词典">
+	<d:index d:value="mwalecd"/>
+	<h1>韦氏高阶英汉双解词典</h1>
+</d:entry>
+
+{% for key, v in entries.items() %}
+<d:entry id="{{key|e}}" d:title="{{key|e}}">
+{% for idx in v.index %}
+<d:index d:value="{{idx|e}}"/>
+{% endfor %}
+{{v.html}}
+</d:entry>
+{% endfor %}
+<d:entry id="front_back_matter" d:title="韦氏高阶英汉双解词典">
+	<h1><b>Merriam-Webster's Advanced Learner's English-Chinese Dictionary</b></h1>
+    <h1><b>韦氏高阶英汉双解词典</b></h1>
+</d:entry>
+</d:dictionary>
